@@ -6,15 +6,12 @@ set ignorecase
 set smartcase
 set nohlsearch
 
-" Map 'w', 'b' to move through camel case words in normal mode
-nnoremap w /[A-Z_.\ \W]<CR>
-nnoremap b ?[A-Z_.\ \W]<CR>
 
-" Map 'w', 'b' to move through camel case words in visual mode
-vnoremap w /\v[A-Z_.\ \W]<CR>
-vnoremap b ?\v[A-Z_.\ \W]<CR>
+let @a = '[a-z\ "\'$)(:;,.><\/\\)(`|&+-][A-Z][a-z]\|[\\ "\'$)(:;,.><\/\\)(`|&+-][a-z]\|[A-Za-z\ "\'$)(:;,.><\/\\)(`|&+-][0-9]\+'
 
 
+nnoremap w :vsc Edit.NextSubword<CR>
+vnoremap w :vsc Edit.NextSubwordExtend<CR>
 
-
-
+nnoremap b :vsc Edit.PreviousSubword<CR>
+vnoremap b :vsc Edit.PreviousSubwordExtend<CR>
