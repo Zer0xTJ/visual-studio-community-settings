@@ -1,1 +1,20 @@
 set clipboard=unnamed,unnamedplus
+
+
+" Enable camel case motion without highlighting
+set ignorecase
+set smartcase
+set nohlsearch
+
+" Map 'w', 'b' to move through camel case words in normal mode
+nnoremap w /[A-Z_.\ \W]<CR>
+nnoremap b ?[A-Z_.\ \W]<CR>
+
+" Map 'w', 'b' to move through camel case words in visual mode
+vnoremap w /\v[A-Z_.\ \W]<CR>
+vnoremap b ?\v[A-Z_.\ \W]<CR>
+
+
+
+
+
